@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './combinedReducers'
 import defaultState  from './defaultState'
 import createSagaMiddleware from 'redux-saga' 
-
+import { initSagas } from './initSagas'
 export function getStore () {
 
     const sagaMiddleware = createSagaMiddleware ();
@@ -22,5 +22,7 @@ export function getStore () {
     );
 
     console.log ('Sagas applied')
+
+    initSagas (sagaMiddleware);
     return store;
 }
