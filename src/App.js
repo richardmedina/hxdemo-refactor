@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux'
 import { UserGetAll } from './actions/actions'
+import UserList from './components/users/UserList';
 
 class App extends Component {
   componentDidMount ()
@@ -15,7 +16,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        Nothing to show  
+        <UserList />
       </div>)
   }
 }
